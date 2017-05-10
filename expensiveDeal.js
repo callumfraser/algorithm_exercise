@@ -2,7 +2,7 @@ module.exports = function cheapestDeal(offerString){
   var individualOffers = offerString.split(',');
   var ratioValues = [];
   var priceRatio = [];
-  var cheapestDeal;
+  var expensiveDeal;
   for (i=0;i<individualOffers.length;i++){
     ratioValues.push(
       {
@@ -15,11 +15,11 @@ module.exports = function cheapestDeal(offerString){
       Number(ratioValues[i].price / ratioValues[i].amount).toFixed(2)
     )
   }
-  var cheapestRatio = Math.min.apply(Math, priceRatio);
+  var expensiveRatio = Math.max.apply(Math, priceRatio);
   for (i=0;i<priceRatio.length;i++){
-    if (priceRatio[i] == cheapestRatio){
-      cheapestDeal = individualOffers[i] + ", R" + cheapestRatio.toFixed(2) + " per avo"
+    if (priceRatio[i] == expensiveRatio){
+      expensiveDeal = individualOffers[i] + ", R" + expensiveRatio.toFixed(2) + " per avo"
     }
   }
-  return cheapestDeal
+  return expensiveDeal
 };

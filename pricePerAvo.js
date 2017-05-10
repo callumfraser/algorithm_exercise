@@ -17,5 +17,5 @@ module.exports = function pricePerAvo(offerString){
   return priceRatio
 };
 
-// 
+//
 // module.exports =
