@@ -1,25 +1,20 @@
-module.exports = function cheapestDeal(offerString){
-  var individualOffers = offerString.split(',');
-  var ratioValues = [];
-  var priceRatio = [];
-  var cheapestDeal;
-  for (i=0;i<individualOffers.length;i++){
-    ratioValues.push(
-      {
-        amount: Number(individualOffers[i].substr(0,1)),
-        price: Number(individualOffers[i].substr(7,(individualOffers[i].length-7)))
-  })
-}
-  for (i=0;i<ratioValues.length;i++){
-    priceRatio.push(
-      Number(ratioValues[i].price / ratioValues[i].amount).toFixed(2)
-    )
+module.exports =  function cheapestDeal(offerString){
+  var individualOffers = offerString.split(",");
+  var priceRatio =[];
+  var ratioValues=[];
+  for (var i=0;i<individualOffers.length;i++){
+   priceRatio.push({
+     amount: Number(individualOffers[i].substr(0,1)),
+     price: Number(individualOffers[i].substr(7,(individualOffers[i].length-7)))
+   })
   }
-  var cheapestRatio = Math.min.apply(Math, priceRatio);
-  for (i=0;i<priceRatio.length;i++){
-    if (priceRatio[i] == cheapestRatio){
-      cheapestDeal = individualOffers[i] + ", R" + cheapestRatio.toFixed(2) + " per avo"
+  for (var j=0;j<priceRatio.length;j++)
+ratioValues.push((priceRatio[j].price / priceRatio[j].amount).toFixed(2));
+  var cheapestDeal = (Math.min.apply(Math, ratioValues)).toFixed(2);
+  for (var k=0;k<ratioValues.length;k++){
+    if (cheapestDeal == ratioValues[k]){
+      var cheapestMeal = individualOffers[k] + ", R" + cheapestDeal + " per avo"
     }
   }
-  return cheapestDeal
+return cheapestMeal
 };
