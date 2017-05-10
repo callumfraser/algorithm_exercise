@@ -1,0 +1,29 @@
+{
+  "name": "algorithm_exercise",
+  "version": "1.0.0",
+  "description": "checking prices of avos",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callumfraser/algorithm_exercise.git"
+  },
+  "keywords": [
+    "avos",
+    "algorithms"
+  ],
+  "author": "CallumF",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/callumfraser/algorithm_exercise/issues"
+  },
+  "homepage": "https://github.com/callumfraser/algorithm_exercise#readme",
+  "dependencies": {
+    "mocha": "^3.3.0"
+  }
+}
