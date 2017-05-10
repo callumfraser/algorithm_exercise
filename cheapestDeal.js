@@ -1,7 +1,8 @@
-module.exports = function pricePerAvo(offerString){
+module.exports = function cheapestDeal(offerString){
   var individualOffers = offerString.split(',');
   var ratioValues = [];
   var priceRatio = [];
+  var cheapestDeal = 999;
   for (i=0;i<individualOffers.length;i++){
     ratioValues.push(
       {
@@ -14,8 +15,12 @@ module.exports = function pricePerAvo(offerString){
       (ratioValues[i].price / ratioValues[i].amount).toFixed(2)
     )
   }
-  return priceRatio
+  for (i=0;i<priceRatio.length;i++){
+    if (priceRatio[i] < cheapestDeal){
+      cheapestDeal ==priceRatio[i]
+    }
+  }
 };
 
-// 
+//
 // module.exports =
